@@ -26,5 +26,4 @@
 //= require select
 //= require single-0.1.0
 //= require datetimepicker
-//= require turbolinks
 //= require_tree .
