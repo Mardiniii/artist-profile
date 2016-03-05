@@ -5,4 +5,7 @@ class PagesController < ApplicationController
 
   def events
   end
+
+  def articles
+  end
 end
