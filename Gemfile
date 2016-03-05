@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem 'bootstrap-glyphicons'
+gem 'annotate'
+gem 'hirb'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
@@ -21,5 +24,10 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
