@@ -86,55 +86,7 @@
 </div>
 <!--slider end-->
 
-<!--header start-->
-<header id="rock_header">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="col-lg-3 col-md-3 col-sm-12">
-          <div class="rock_logo"> <a href="index.html"><img src="<%= asset_path('Logo1.png') %>" alt="logo"  /></a> </div>
-        </div>
-        <div class="col-lg-9 col-md-9 col-sm-12">
-          <div class="rock_menu_toggle navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu <i class="fa fa-bars"></i></div>
-          <div class="rock_menu">
-            <ul class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <li class="active"><%= link_to "Home", root_path %></li>
-              <li><a>Álbumnes</a>
-                <ul class="sub-menu">
-                  <li><a href="blog_category.html">Blog Category</a></li>
-                  <li><a href="blog_full_width.html">Blog Full Width</a></li>
-                  <li><a href="single_page.html">Blog Single Page</a></li>
-                  <li><a href="blog_left_sidebar.html">Blog Left sidebar</a></li>
-                  <li><a href="blog_right_sidebar.html">Blog right sidebar</a></li>
-                </ul>
-              </li>
-              <li><a>Eventos</a>
-                <ul class="sub-menu">
-                  <li><a href="event.html">Events</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="elements.html">Elements</a></li>
-                  <li><a href="prices.html">Price Table</a></li>
-                  <li><a href="columns.html">Columns</a></li>
-                  <li><a href="404.html">404 Page</a></li>
-                  <li><a href="icon.html">Icon</a></li>
-                </ul>
-              </li>
-              <li><a>Blog</a>
-                <ul class="sub-menu">
-                  <li><a href="gallery_2column.html">Gallery 2 Column</a></li>
-                  <li><a href="gallery_3column.html">Gallery 3 Column</a></li>
-                  <li><a href="gallery_4column.html">Gallery 4 Column</a></li>
-                </ul>
-              </li>
-              <li><a href="contact.html">Contacto</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-<!--header end-->
+<%= render 'layouts/navbar', other_page: false %>
 
 <!--main container start-->
 <div class="rock_welcome_note">
