@@ -12,6 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require modernizr.custom
+//= require jquery.gridrotator
+//= require owl.carousel
 //= require bootstrap-sprockets
+//= require bootstrap-select
+//= require mediaelement_rails
+//= require jquery.easing.1.3
+//= require bxslider
+//= require fancybox
+//= require smoothscroll
+//= require custom
+//= require select
+//= require single-0.1.0
+//= require datetimepicker
 //= require turbolinks
 //= require_tree .

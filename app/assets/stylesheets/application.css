@@ -11,6 +11,12 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require_directory ../../../vendor/assets/stylesheets
  *= require_self
+ *= require fancybox
  *= require font-awesome
+
+ *= require mediaelement_rails
+ *= require mediaelement_rails/mejs-skins
+ *= require datetimepicker
  */

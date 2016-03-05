@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -51,6 +52,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
+    bxslider-rails (4.2.5.1)
     byebug (8.2.2)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -63,6 +65,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    fancybox-rails (0.3.1)
+      railties (>= 3.1.0)
     font-awesome-rails (4.5.0.0)
       railties (>= 3.2, < 5.0)
     globalid (0.3.6)
@@ -81,6 +85,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mediaelement_rails (0.8.2)
+      jquery-rails (>= 1.0)
+      railties (>= 3.1)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -103,6 +110,14 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.4)
       sprockets-rails
+    rails-assets-datetimepicker (2.5.1)
+      rails-assets-jquery (>= 1.7.2)
+      rails-assets-jquery-mousewheel (>= 3.1.13)
+      rails-assets-php-date-formatter (>= 1.3.3)
+    rails-assets-jquery (2.2.1)
+    rails-assets-jquery-mousewheel (3.1.13)
+      rails-assets-jquery (>= 1.2.2)
+    rails-assets-php-date-formatter (1.3.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -166,15 +181,19 @@ DEPENDENCIES
   annotate
   bootstrap-glyphicons
   bootstrap-sass (~> 3.3.6)
+  bxslider-rails
   byebug
   coffee-rails (~> 4.1.0)
+  fancybox-rails
   font-awesome-rails
   hirb
   jbuilder (~> 2.0)
   jquery-rails
+  mediaelement_rails
   pg
   puma
   rails (= 4.2.4)
+  rails-assets-datetimepicker!
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

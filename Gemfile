@@ -16,6 +16,12 @@ gem 'bootstrap-glyphicons'
 gem 'annotate'
 gem 'hirb'
 gem 'puma'
+gem 'bxslider-rails'
+gem 'fancybox-rails'
+gem "mediaelement_rails"
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
 
 group :development, :test do
   gem 'byebug'
@@ -30,4 +36,3 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
