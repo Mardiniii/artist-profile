@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   def events
   end
 
-  def articles
+  def contact_us
+  end
+
+  def blog
   end
 end
