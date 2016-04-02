@@ -18,6 +18,7 @@ gem 'puma'
 gem 'bxslider-rails'
 gem 'fancybox-rails'
 gem "mediaelement_rails"
+gem 'devise'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
