@@ -20,4 +20,8 @@
 class Event < ActiveRecord::Base
   has_attached_file :image, styles: { medium: "570x330#", thumb: "100x100#" }, default_url: "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  validates :title, :event_date, :start_hour, :end_hour, :location, :description, :image, presence: { message: "Todos los campos son obligatorios"}
+  validates :description, length: { maximum: 145,
+    too_long: "%{count} caracteres es el máximo permitido" }
 end
