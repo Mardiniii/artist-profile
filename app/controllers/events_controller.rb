@@ -31,6 +31,7 @@ class EventsController < ApplicationController
   end
 
   def index
+    @event = Event.all.reversed
   end
 
   private
