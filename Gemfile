@@ -19,6 +19,7 @@ gem 'bxslider-rails'
 gem 'fancybox-rails'
 gem "mediaelement_rails"
 gem 'devise'
+gem "paperclip", "~> 5.0.0.beta1"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
