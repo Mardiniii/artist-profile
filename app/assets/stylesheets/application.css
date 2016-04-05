@@ -15,7 +15,7 @@
  *= require_self
  *= require fancybox
  *= require font-awesome
-
+ *= require bootstrap-wysihtml5
  *= require mediaelement_rails
  *= require mediaelement_rails/mejs-skins
  *= require datetimepicker

@@ -20,6 +20,7 @@ gem "mediaelement_rails"
 gem 'devise'
 gem "paperclip", "~> 5.0.0.beta1"
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
+gem 'bootstrap-wysihtml5-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'

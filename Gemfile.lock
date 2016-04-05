@@ -61,6 +61,8 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.2)
     bxslider-rails (4.2.5.1)
     byebug (8.2.2)
@@ -255,6 +257,7 @@ DEPENDENCIES
   annotate
   bootstrap-glyphicons
   bootstrap-sass (~> 3.3.6)
+  bootstrap-wysihtml5-rails
   bxslider-rails
   byebug
   coffee-rails (~> 4.1.0)
