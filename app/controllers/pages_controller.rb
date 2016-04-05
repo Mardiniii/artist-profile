@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @events = Event.all.reversed.limit(4)
-
-    # Event.where(event_date.month: "#{Date.today}")
+    @events = Event.all.order("event_date").limit(4)
   end
 
   def events
