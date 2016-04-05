@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def events
+    @events = Event.all.reversed
   end
 
   def contact_us
