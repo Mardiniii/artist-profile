@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get 'blog' => 'pages#blog'
   get 'contact' => 'pages#contact_us'
   resources :events
+  devise_scope :user do
+    get "/admin" => "devise/sessions#new"
+  end
 end

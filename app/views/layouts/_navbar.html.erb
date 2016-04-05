@@ -21,13 +21,7 @@
               <% if user_signed_in? %>
                 <li class="active"><a>Admin</a>
                   <ul class="sub-menu">
-                    <li><a href="event.html">Events</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                    <li><a href="prices.html">Price Table</a></li>
-                    <li><a href="columns.html">Columns</a></li>
-                    <li><a href="404.html">404 Page</a></li>
-                    <li><a href="icon.html">Icon</a></li>
+                    <li><%= link_to "Eventos", events_path %></li>
                     <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
                   </ul>
                 </li>
