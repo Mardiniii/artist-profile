@@ -17,4 +17,6 @@
 class BlogEntry < ActiveRecord::Base
   has_attached_file :image, styles: { index_size: "990x500#", show_size: "1170x500#", thumb: "100x100#" }, default_url: "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  validates :title, :author, :content, :image, presence: { message: "Todos los campos son obligatorios"}
 end
