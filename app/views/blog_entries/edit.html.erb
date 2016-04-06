@@ -1,7 +1,7 @@
 <div class="container new_register">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h1 class="text-center">Crear nueva entrada de blog:</h1>
+      <h1 class="text-center">Editar entrada de blog:</h1>
       <%= form_for(@blog_entry) do |blog_entry| %>
         <% if @blog_entry.errors.any? %>
           <% @blog_entry.errors.each do |attribute, message| %>

@@ -16,8 +16,29 @@ class BlogEntriesController < ApplicationController
     end
   end
 
+  def edit
+    @blog_entry = BlogEntry.find(params[:id])
+  end
+
+  def update
+    @blog_entry = BlogEntry.find(params[:id])
+    if @blog_entry.update(blog_entry_params)
+      flash[:notice] = "La entrada de blog ha sido editada con éxito"
+      redirect_to blog_entrys_path
+    else
+      flash[:alert] = 'Ha ocurrido un problema y la entrada de blog no ha sido editada'
+      render 'edit'
+    end
+  end
+
   def index
     @blog_entries = BlogEntry.all
+  end
+
+  def destroy
+    @blog_entry = BlogEntry.find(params[:id])
+    @blog_entry.destroy
+    redirect_to blog_entries_path
   end
 
   private
