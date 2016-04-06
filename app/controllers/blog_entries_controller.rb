@@ -1,5 +1,5 @@
 class BlogEntriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:show]
 
   def new
     @blog_entry = BlogEntry.new
@@ -29,6 +29,10 @@ class BlogEntriesController < ApplicationController
       flash[:alert] = 'Ha ocurrido un problema y la entrada de blog no ha sido editada'
       render 'edit'
     end
+  end
+
+  def show
+    @blog_entry = BlogEntry.find(params[:id])
   end
 
   def index

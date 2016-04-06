@@ -14,30 +14,13 @@
         <div class="rock_recent_post">
           <h3>Artículos Recientes</h3>
           <ul class="bxslider">
-            <li> <img src="http://placehold.it/100x100" alt="post" />
-              <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. </a>
-                <p><span class="label label-default">April 17, 2014</span></p>
-              </div>
-            </li>
-            <li> <img src="http://placehold.it/100x100" alt="post" />
-              <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. </a>
-                <p><span class="label label-default">April 17, 2014</span></p>
-              </div>
-            </li>
-            <li> <img src="http://placehold.it/100x100" alt="post" />
-              <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. </a>
-                <p><span class="label label-default">April 17, 2014</span></p>
-              </div>
-            </li>
-            <li> <img src="http://placehold.it/100x100" alt="post" />
-              <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. </a>
-                <p><span class="label label-default">April 17, 2014</span></p>
-              </div>
-            </li>
+            <% @footer_blog_entries.each do |blog_entry| %>
+              <li> <img src="<%= blog_entry.image.url(:thumb) %>" alt="post" />
+                <div class="rock_post_detail"> <%= link_to blog_entry.title, blog_entry_path(blog_entry) %>
+                  <p><span class="label label-default"><%= blog_entry.created_at.strftime("%B %d, %Y") %></span></p>
+                </div>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
 
   def footer_items
     @footer_events = Event.order(created_at: :desc).limit(5)
+    @footer_blog_entries = BlogEntry.order(created_at: :desc).limit(5)
   end
 end

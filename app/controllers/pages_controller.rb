@@ -12,5 +12,6 @@ class PagesController < ApplicationController
   end
 
   def blog
+    @blog_entries = BlogEntry.order("created_at DESC")
   end
 end
