@@ -1,0 +1,54 @@
+<div class="field form-group">
+  <%= event.label :title, "Nombre:", class: "lead lead-lg" %>
+  <%= event.text_field :title, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= event.label :event_date, "Fecha:", class: "lead lead-lg block-label" %>
+  <%= event.date_select :event_date, {ampm: true, minute_step: 15, :default => {:hour => '06', :minute => '00'} }, required: true, class: "form-control half-width" %>
+</div>
+
+<div class="field form-group">
+  <%= event.label :location, "Locación:", class: "lead lead-lg" %>
+  <%= event.text_field :location, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= event.label :description, "Descripción:", class: "lead lead-lg" %>
+  <%= event.text_area :description, required: true, :rows => 5, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= event.label :image, "Imagen:", class: "lead lead-lg block-label" %>
+  <% if @event.image.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <%= image_tag event.object.image.url(:thumb) %>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group reg-email">
+          <div>
+            <%= event.file_field :image, class: "input-file" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= event.file_field :image, required: true, class: "input-file" %>
+  <% end %>
+</div>
+
+<div class="field form-group">
+  <%= event.label :start_hour, "Hora de Inicio:", class: "lead lead-lg block-label" %>
+  <%= event.time_select :start_hour, {ampm: true, minute_step: 15, :default => {:hour => '06', :minute => '00'} }, required: true, class: "form-control half-width" %>
+</div>
+
+<div class="field form-group">
+  <%= event.label :end_hour, "Hora de Cierre:", class: "lead lead-lg block-label" %>
+  <%= event.time_select :end_hour, {ampm: true, minute_step: 15, :default => {:hour => '06', :minute => '00'} }, required: true, class: "form-control half-width" %>
+</div>
+
+<div class="actions form-group text-center">
+  <%= link_to "Cancelar", events_path, :class => 'btn btn-lg btn-danger' %>
+  <%= event.submit "Guardar Información", :class => 'btn btn-lg btn-success' %>
+</div>

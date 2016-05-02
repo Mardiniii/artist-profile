@@ -1,0 +1,15 @@
+<div class="container new_register">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Editar evento:</h1>
+      <%= form_for(@event) do |event| %>
+        <% if @event.errors.any? %>
+          <% @event.errors.each do |attribute, message| %>
+            <h3 class="validation-error"><%= message %></h3>
+          <% end %>
+        <% end %>
+        <%= render 'event_fields', event: event %>
+      <% end %>
+    </div>
+  </div>
+</div>

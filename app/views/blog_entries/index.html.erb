@@ -1,0 +1,30 @@
+<div class="container new_register">
+  <div class="row">
+    <h1 class="text-center">Entradas de Blog</h1>
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <th>Número</th>
+          <th>Imagen</th>
+          <th>Título</th>
+          <th>Fecha</th>
+          <th>Opciones</th>
+        </thead>
+        <% @blog_entries.each_with_index do |blog_entry,index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= image_tag blog_entry.image.url(:thumb) %></td>
+            <td><%= blog_entry.title %></td>
+            <td><%= blog_entry.created_at.strftime("%B %d, %Y") %></td>
+            <td><%= link_to "Ver", blog_entry_path(blog_entry) %> - <%= link_to "Editar", edit_blog_entry_path(blog_entry) %> - <%= link_to blog_entry_path(blog_entry.id), method: :delete, data: { confirm: '¿Are you sure?' } do %>Eliminar<% end %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center col-md-offset-3" id="btn-new-user">
+      <%= link_to "Regresar al Home", root_path, :class => 'btn btn-lg btn-danger' %>
+      <%= link_to "Crear nueva entrada", new_blog_entry_path, class: "btn btn-lg btn-ar btn-success" %>
+    </div>
+</div>

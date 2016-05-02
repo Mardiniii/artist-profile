@@ -1,0 +1,46 @@
+<%= render 'layouts/navbar', other_page: true %>
+<!--page title start-->
+<div class="rock_page_title_main">
+  <%= render 'pages/rock_page_title_bg' %>
+  <div class="rock_page_title">
+    <div class="container">
+      <div class="rock_heading_div">
+        <div class="rock_heading">
+          <h1>Leer Entrada</h1>
+          <p>X</p>
+        </div>
+      </div>
+      <div class="rock_pager">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Leer entrada", blog_entry_path(@blog_entry) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--page title end-->
+<div class="clearfix"></div>
+<div class="rock_margin_30"></div>
+
+<!--main content start-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="rock_blog_single"> <img src="<%= @blog_entry.image.url(:show_size) %>" alt="blog single" />
+        <h2><%= @blog_entry.title %></h2>
+        <div class="blog_entry_meta">
+          <ul>
+            <li><%= link_to "<i class='fa fa-user'></i>#{@blog_entry.author}".html_safe, blog_entry_path(@blog_entry) %></li>
+            <li><%= link_to "<i class='fa fa-calendar'></i>#{@blog_entry.created_at.strftime("%B %d, %Y")}".html_safe, blog_entry_path(@blog_entry) %></li>
+          </ul>
+        </div>
+        <hr>
+        <p><%= @blog_entry.content.html_safe %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix" style="margin-top: 60px;"></div>
+<%= render 'layouts/footer' %>

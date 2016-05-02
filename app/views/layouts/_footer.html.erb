@@ -1,4 +1,47 @@
-
+<div class="rock_footer rock_padding_20">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="rock_footer_logo"> <img src="<%= asset_path('Logo1.png') %>" alt="footer logo" /> </div>
+        <h3>Location</h3>
+        <p>PO Box 16122 Collins Street West Victoria 8007 Australia</p>
+        <h3>Opening Hours</h3>
+        <p> MON - FRI  9 AM TO 10 PM</p>
+        <h3>Happy Hours</h3>
+        <p> MON - FRI  2 PM TO 06 PM</p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="rock_recent_post">
+          <h3>Artículos Recientes</h3>
+          <ul class="bxslider">
+            <% @footer_blog_entries.each do |blog_entry| %>
+              <li> <img src="<%= blog_entry.image.url(:thumb) %>" alt="post" />
+                <div class="rock_post_detail"> <%= link_to blog_entry.title, blog_entry_path(blog_entry) %>
+                  <p><span class="label label-default"><%= blog_entry.created_at.strftime("%B %d, %Y") %></span></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="rock_recent_post">
+          <h3>Próximos Eventos</h3>
+          <ul class="bxslider">
+            <% @footer_events.each do |event| %>
+              <li>
+                <img src="<%= event.image.url(:thumb) %>" alt="post" />
+                <div class="rock_post_detail"> <a href="javascript:void(0);" style="cursor: text;"><%= event.title %></a>
+                  <p><span class="label label-default"><%= event.event_date.strftime("%B %d, %Y") %></span></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="rock_copyright">
   <div class="rock_copyright_bg">
     <section class="main">
@@ -44,22 +87,19 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12">
-          <p>Stay Connected With Us Rockon</p>
+          <p>Ana Catalina</p>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="rock_social">
             <ul>
-              <li><a href=""><i class="fa fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-              <li><a href=""><i class="fa fa-skype"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-              <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+              <li><a href="https://www.facebook.com/AnaCatalina1" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/anacatalina_1/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://twitter.com/AnaCatalina_1" target="_blank"><i class="fa fa-twitter"></i></a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-5 col-md-8 col-sm-12 col-lg-offset-0 col-md-offset-2 col-sm-offset-0">
-          <p>CopyRight @ 2014 rockon HTLM template all right reserved </p>
+          <p>CopyRight @ 2016 Ana Catalina all right reserved </p>
         </div>
       </div>
     </div>

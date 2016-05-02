@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -18,6 +17,11 @@ gem 'puma'
 gem 'bxslider-rails'
 gem 'fancybox-rails'
 gem "mediaelement_rails"
+gem 'devise'
+gem "paperclip", "~> 5.0.0.beta1"
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
+gem 'bootstrap-wysihtml5-rails'
+gem 'aws-sdk', '< 2.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
@@ -28,6 +32,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'guard'
@@ -35,5 +40,6 @@ group :development do
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end

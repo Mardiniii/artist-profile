@@ -1,11 +1,17 @@
 class PagesController < ApplicationController
 
   def home
+    @events = Event.all.order("event_date").limit(4)
   end
 
   def events
+    @events = Event.all.reversed
   end
 
-  def articles
+  def contact_us
+  end
+
+  def blog
+    @blog_entries = BlogEntry.order("created_at DESC")
   end
 end

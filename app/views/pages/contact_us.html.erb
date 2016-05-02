@@ -1,0 +1,64 @@
+<%= render 'layouts/navbar', other_page: true %>
+<!--page title start-->
+<div class="rock_page_title_main">
+  <%= render 'rock_page_title_bg' %>
+  <div class="rock_page_title">
+    <div class="container">
+      <div class="rock_heading_div">
+        <div class="rock_heading">
+          <h1>Contact Us</h1>
+          <p>X</p>
+        </div>
+      </div>
+      <div class="rock_pager">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--page title end-->
+<div class="clearfix"></div>
+<div class="container">
+  <div class="rock_contact">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <form role="form">
+          <div class="form-group">
+            <input type="text" class="form-control" id="uname" placeholder="Your First Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="uemail" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="web_site" placeholder="Your Web site">
+          </div>
+          <div class="form-group">
+            <textarea rows="10" class="form-control" id="message" placeholder="Your Message"></textarea>
+          </div>
+          <input type="button" id="em_sub" class="btn btn-default btn-lg" value="Submit Your Message">
+          <p id="err"></p>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="rock_contact_detail">
+          <div>
+            <p><i class="fa fa-envelope"></i> <a href="">@envato.com</a></p>
+            <p><i class="fa fa-mobile"></i> <a href="">+61 3 8376 6284</a></p>
+          </div>
+          <div>
+            <p><i class="fa fa-map-marker"></i> <a href="">PO Box 16122 Collins Street WestVictoria 8007 Australia</a></p>
+            <p><i class="fa fa-globe"></i> <a href="">ww.themeforest.net</a></p>
+          </div>
+        </div>
+        <div class="rock_map">
+          <iframe class="google-map" src="https://maps.google.sk/maps/ms?msa=0&amp;msid=210946297010027755543.0004c74af772bb9276d33&amp;ie=UTF8&amp;ll=48.576981,19.13117&amp;spn=0,0&amp;t=m&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<%= render 'layouts/footer' %>

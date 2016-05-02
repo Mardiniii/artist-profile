@@ -1,0 +1,39 @@
+<div class="field form-group">
+  <%= blog_entry.label :title, "Título:", class: "lead lead-lg" %>
+  <%= blog_entry.text_field :title, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= blog_entry.label :author, "Autor:", class: "lead lead-lg" %>
+  <%= blog_entry.text_field :author, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= blog_entry.label :content, "Contenido:", class: "lead lead-lg" %>
+  <%= blog_entry.text_area :content, required: true, :rows => 15, class: "form-control wysihtml5", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= blog_entry.label :image, "Imagen:", class: "lead lead-lg block-label" %>
+  <% if @blog_entry.image.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <%= image_tag blog_entry.object.image.url(:thumb) %>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group reg-email">
+          <div>
+            <%= blog_entry.file_field :image, class: "input-file" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= blog_entry.file_field :image, required: true, class: "input-file" %>
+  <% end %>
+</div>
+
+<div class="actions form-group text-center">
+  <%= link_to "Cancelar", blog_entries_path, :class => 'btn btn-lg btn-danger' %>
+  <%= blog_entry.submit "Guardar Información", :class => 'btn btn-lg btn-success' %>
+</div>

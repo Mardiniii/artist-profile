@@ -225,112 +225,44 @@
         <div class="col-lg-9 col-md-8 col-sm-12">
           <div class="rock_heading_div">
             <div class="rock_heading">
-              <h1>Event of the month</h1>
+              <h1>Eventos del mes</h1>
               <p>X</p>
             </div>
           </div>
           <div class="rock_event">
             <div class="rock_event_tab">
               <ul>
-                <li><a href="#tab1" class="active">
-                  <p class="rock_event_date">20</p>
-                  <p class="rock_event_month">April</p>
-                  </a></li>
-                <li><a href="#tab2">
-                  <p class="rock_event_date">22</p>
-                  <p class="rock_event_month">April</p>
-                  </a></li>
-                <li><a href="#tab3">
-                  <p class="rock_event_date">24</p>
-                  <p class="rock_event_month">April</p>
-                  </a></li>
-                <li><a href="#tab4">
-                  <p class="rock_event_date">28</p>
-                  <p class="rock_event_month">April</p>
-                  </a></li>
+                <% @events.each_with_index do |event, index| %>
+                  <li>
+                    <a href="#tab<%= index+1 %>" class="active">
+                      <p class="rock_event_date"><%= event.event_date.strftime("%d") %></p>
+                      <p class="rock_event_month"><%= event.event_date.strftime("%B") %></p>
+                    </a>
+                  </li>
+                <% end %>
               </ul>
             </div>
             <div class="rock_event_tab_content_main">
-              <div id="tab1" class="rock_event_tab_content">
-                <div class="row">
-                  <div class="col-lg-8 col-md-12 col-sm-12"><img class="animated fadeInLeft" src="http://placehold.it/495x330" alt="" /> </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="rock_event_detail animated fadeInLeft">
-                      <h1>Rock on</h1>
-                      <p>Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada pharet vel tincidunt. Integer .</p>
-                      <h4>Share  This</h4>
-                      <div class="rock_social">
-                        <ul>
-                          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                          <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                          <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
+              <% @events.each_with_index do |event, index| %>
+                <div id="tab<%= index+1 %>" class="rock_event_tab_content">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-12 col-sm-12"><img class="animated fadeInLeft" src="<%= event.image.url(:home_size) %>" alt="" /> </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                      <div class="rock_event_detail animated fadeInLeft">
+                        <h4><%= event.title %></h4>
+                        <p><%= event.description %></p>
+                        <h4>Compartir</h4>
+                        <div class="rock_social">
+                          <ul>
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div id="tab2" class="rock_event_tab_content">
-                <div class="row">
-                  <div class="col-lg-8 col-md-12 col-sm-12"> <img class="animated fadeInLeft" src="http://placehold.it/495x330/00f" alt="" /> </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="rock_event_detail animated fadeInLeft">
-                      <h1>Rock on</h1>
-                      <p>Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada pharet vel tincidunt. Integer .</p>
-                      <h4>Share  This</h4>
-                      <div class="rock_social">
-                        <ul>
-                          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                          <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                          <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="tab3" class="rock_event_tab_content">
-                <div class="row">
-                  <div class="col-lg-8 col-md-12 col-sm-12"> <img class="animated fadeInLeft" src="http://placehold.it/495x330" alt="" /> </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="rock_event_detail animated fadeInLeft">
-                      <h1>Rock on</h1>
-                      <p>Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada pharet vel tincidunt. Integer .</p>
-                      <h4>Share  This</h4>
-                      <div class="rock_social">
-                        <ul>
-                          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                          <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                          <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="tab4" class="rock_event_tab_content">
-                <div class="row">
-                  <div class="col-lg-8 col-md-12 col-sm-12"> <img class="animated fadeInLeft" src="http://placehold.it/495x330/00f" alt="" /> </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="rock_event_detail animated fadeInLeft">
-                      <h1>Rock on</h1>
-                      <p>Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada pharet vel tincidunt. Integer .</p>
-                      <h4>Share  This</h4>
-                      <div class="rock_social">
-                        <ul>
-                          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                          <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                          <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                          <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <% end %>
             </div>
             <div class="clearfix"></div>
           </div>
@@ -338,15 +270,15 @@
         <div class="col-lg-3 col-md-4 col-sm-12">
           <div class="rock_heading_div">
             <div class="rock_heading">
-              <h1>Event Timings</h1>
+              <h1>Horario Eventos</h1>
               <p>X</p>
             </div>
           </div>
           <div class="rock_event_time">
             <ul>
-              <li><a href="event.html">09:00 <span>Lorem ipsum dolor</span></a></li>
-              <li><a href="event.html">11:30 <span>Nulla scelerisque</span></a></li>
-              <li><a href="event.html">14:00 <span>Curabitur sed scele</span></a></li>
+              <% @events.each do |event| %>
+                <li><a href="javascript:void(0);" style="cursor: text;"><%= event.start_hour.strftime("%l %p") %> <span><%= event.location %></span></a></li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -565,135 +497,7 @@
         </div>
       </div>
     </div>
-    <div class="rock_footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="rock_footer_logo"> <img src="<%= asset_path('Logo1.png') %>" alt="footer logo" /> </div>
-            <h3>Location</h3>
-            <p>PO Box 16122 Collins Street West Victoria 8007 Australia</p>
-            <h3>Opening Hours</h3>
-            <p> MON - FRI  9 AM TO 10 PM</p>
-            <h3>Happy Hours</h3>
-            <p> MON - FRI  2 PM TO 06 PM</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="rock_recent_post">
-              <h3>Recent Posts</h3>
-              <ul class="bxslider">
-                <li> <img src="http://placehold.it/100x100" alt="post" />
-                  <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. </a>
-                    <p><span class="label label-default">April 17, 2014</span></p>
-                  </div>
-                </li>
-                <li> <img src="http://placehold.it/100x100" alt="post" />
-                  <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. </a>
-                    <p><span class="label label-default">April 17, 2014</span></p>
-                  </div>
-                </li>
-                <li> <img src="http://placehold.it/100x100" alt="post" />
-                  <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. </a>
-                    <p><span class="label label-default">April 17, 2014</span></p>
-                  </div>
-                </li>
-                <li> <img src="http://placehold.it/100x100" alt="post" />
-                  <div class="rock_post_detail"> <a href="">Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. </a>
-                    <p><span class="label label-default">April 17, 2014</span></p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4">
-            <div class="rock_twitter_feed">
-              <h3>Twitter Feed</h3>
-              <ul>
-                <li> <i class="fa fa-twitter"></i>
-                  <div class="rock_feed"> <a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-                    <p><span class="label label-default">5 hour Ago</span></p>
-                  </div>
-                </li>
-                <li> <i class="fa fa-twitter"></i>
-                  <div class="rock_feed"> <a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-                    <p><span class="label label-default">5 hour Ago</span></p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="rock_copyright">
-      <div class="rock_copyright_bg">
-        <section class="main">
-          <div id="ri-grid2" class="ri-grid ri-grid-size-3">
-            <ul>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-              <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-            </ul>
-          </div>
-        </section>
-      </div>
-      <div class="rock_copyright_div">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <p>Stay Connected With Us Rockon</p>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="rock_social">
-                <ul>
-                  <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                  <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                  <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href=""><i class="fa fa-skype"></i></a></li>
-                  <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                  <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-8 col-sm-12 col-lg-offset-0 col-md-offset-2 col-sm-offset-0">
-              <p>CopyRight @ 2014 rockon HTLM template all right reserved </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/footer' %>
   </div>
 </div>
 

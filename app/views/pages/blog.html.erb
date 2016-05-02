@@ -1,0 +1,101 @@
+<%= render 'layouts/navbar', other_page: true %>
+<!--page title start-->
+<div class="rock_page_title_main">
+  <%= render 'rock_page_title_bg' %>
+  <div class="rock_page_title">
+    <div class="container">
+      <div class="rock_heading_div">
+        <div class="rock_heading">
+          <h1>Entradas de Blog</h1>
+          <p>X</p>
+        </div>
+      </div>
+      <div class="rock_pager">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Entradas de Blog", blog_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--page title end-->
+<div class="blogcategory_container">
+  <div class="col-lg-8 col-md-7 col-sm-8 blogcategory_big_part">
+    <% @blog_entries.each do |blog_entry| %>
+      <div class="rock_blog">
+        <div class="blogcategory_image"> <img src="<%= blog_entry.image.url(:index_size) %>" alt="" />
+          <div class="blogcategory_image_overlay">
+            <div class="photo_link"> <%= link_to "<i class='fa fa-link'></i>".html_safe, blog_entry_path(blog_entry) %> </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <div class="rock_blog_detail">
+              <h3><%= blog_entry.title %></h3>
+              <div class="blog_entry_meta">
+                <ul>
+                  <li><%= link_to "<i class='fa fa-user'></i>#{blog_entry.author}".html_safe, blog_entry_path(blog_entry) %></li>
+                  <li><%= link_to "<i class='fa fa-calendar'></i>#{blog_entry.created_at.strftime("%B %d, %Y")}".html_safe, blog_entry_path(blog_entry) %></li>
+                </ul>
+              </div>
+              <!-- <p>Vivamus scelerisque mauris sit amet lacus apit. Curabitur bibendum, odio sed tempus egestas, risus lacus loere velit leo a quam. Vivamus bibendum felis ac urna pellentesque, id porttitollamcorper. Vivamus vitae vulputate massa. Suspendisse scelerisques imperdiet convallis, nisi urna dapibus odio, </p> -->
+              <%= link_to "Leer más", blog_entry_path(blog_entry), class: "btn btn-arrow btn-4a icon-arrow-right" %>
+            <!--   <a href="" class="">Read More</a>  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!--sidebar start-->
+  <div class="col-lg-4 col-md-5 col-sm-4 blogcategory_small_part">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="rock_sidebar">
+          <h2>Rockon Club Track</h2>
+          <div class="rock_audio_player">
+            <div class="rock_audio_player_title"><span class="track_artist">Enrique</span> Escape is the second</div>
+            <div class="rock_audio_player_track_image"> <img src="http://placehold.it/300x150" alt="track 1" />
+              <div class="rock_audio_player_track_image_overlay">Escape is the second</div>
+            </div>
+            <div class="audio-player">
+              <audio class="rock_player" src="<%= audio_path('Bailando.mp3') %>" type="audio/mp3" controls></audio>
+            </div>
+          </div>
+        </div>
+        <div class="rock_sidebar">
+          <h2>Últimas Entradas</h2>
+          <div class="rock_recent_post">
+            <ul class="bxslider">
+              <% @footer_blog_entries.each do |blog_entry| %>
+                <li> <img src="<%= blog_entry.image.url(:thumb) %>" alt="post" />
+                  <div class="rock_post_detail"> <%= link_to blog_entry.title, blog_entry_path(blog_entry) %>
+                    <p><span class="label label-default"><%= blog_entry.created_at.strftime("%B %d, %Y") %></span></p>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="rock_sidebar">
+          <h2>Rockon Gallery</h2>
+          <div class="rock_gallery">
+            <ul>
+              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--sidebar end-->
+</div>
+<div class="clearfix"></div>
+<%= render 'layouts/footer' %>

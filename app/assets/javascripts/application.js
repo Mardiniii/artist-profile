@@ -27,4 +27,6 @@
 //= require single-0.1.0
 //= require datetimepicker
 //= require turbolinks
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales/es-ES
 //= require_tree .
