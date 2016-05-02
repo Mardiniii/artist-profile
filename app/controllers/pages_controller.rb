@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = Event.all.reversed
+    @events = Event.all.order(created_at: :desc)
   end
 
   def contact_us

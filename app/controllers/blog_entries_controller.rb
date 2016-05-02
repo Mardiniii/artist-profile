@@ -36,7 +36,7 @@ class BlogEntriesController < ApplicationController
   end
 
   def index
-    @blog_entries = BlogEntry.all
+    @blog_entries = BlogEntry.all.order(created_at: :desc)
   end
 
   def destroy

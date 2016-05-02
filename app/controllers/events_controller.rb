@@ -32,7 +32,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.reversed
+    @events = Event.all.order(created_at: :desc)
   end
 
   def destroy
