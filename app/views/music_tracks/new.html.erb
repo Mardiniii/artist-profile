@@ -1,2 +1,15 @@
-<h1>MusicTracks#new</h1>
-<p>Find me in app/views/music_tracks/new.html.erb</p>
+<div class="container new_register">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Crear nueva canción:</h1>
+      <%= form_for(@music_track) do |music_track| %>
+        <% if @music_track.errors.any? %>
+          <% @music_track.errors.each do |attribute, message| %>
+            <h3 class="validation-error"><%= message %></h3>
+          <% end %>
+        <% end %>
+        <%= render 'music_track_fields', music_track: music_track %>
+      <% end %>
+    </div>
+  </div>
+</div>
