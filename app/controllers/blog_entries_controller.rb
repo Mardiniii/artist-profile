@@ -24,7 +24,7 @@ class BlogEntriesController < ApplicationController
     @blog_entry = BlogEntry.find(params[:id])
     if @blog_entry.update(blog_entry_params)
       flash[:notice] = "La entrada de blog ha sido editada con éxito"
-      redirect_to blog_entrys_path
+      redirect_to blog_entries_path
     else
       flash[:alert] = 'Ha ocurrido un problema y la entrada de blog no ha sido editada'
       render 'edit'
