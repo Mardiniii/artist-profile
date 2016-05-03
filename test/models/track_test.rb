@@ -9,6 +9,7 @@
 #  audio_content_type :string
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
+#  music_track_id     :integer
 #
 
 require 'test_helper'
