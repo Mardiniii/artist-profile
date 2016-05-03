@@ -3,7 +3,7 @@ class MusicTracksController < ApplicationController
 
   def new
     @music_track = MusicTrack.new
-    1.time { @music_track.tracks.build }
+    @music_track.tracks.build
   end
 
   def create
@@ -12,7 +12,7 @@ class MusicTracksController < ApplicationController
       flash[:notice] = "La canción ha sido guardada con éxito"
       redirect_to music_tracks_path
     else
-      1.time { @music_track.tracks.build }
+      @music_track.track.build
       flash[:alert] = "Ha ocurrido un problema y la canción no ha sido almacenada"
       render :action => 'new'
     end

@@ -28,6 +28,17 @@
   <% end %>
 </div>
 
+<%= music_track.fields_for :tracks do |track| %>
+  <div class="field form-group">
+    <%= track.label :audio, "Archivo de audio:", class: "lead lead-lg block-label" %>
+    <% if music_track.object.track.audio.url != "" %>
+      <%= track.file_field :audio, class: "input-file" %>
+    <% else %>
+      <%= track.file_field :audio, required: true, class: "input-file" %>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="actions form-group text-center">
   <%= link_to "Cancelar", music_tracks_path, :class => 'btn btn-lg btn-danger' %>
   <%= music_track.submit "Guardar Información", :class => 'btn btn-lg btn-success' %>
