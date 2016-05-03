@@ -31,7 +31,8 @@
 <%= music_track.fields_for :tracks do |track| %>
   <div class="field form-group">
     <%= track.label :audio, "Archivo de audio:", class: "lead lead-lg block-label" %>
-    <% if music_track.object.track.audio.url != "" %>
+    <% if track.object.audio.url != "" %>
+      <p><strong>Nombre:</strong> <%= track.object.audio_file_name %></p>
       <%= track.file_field :audio, class: "input-file" %>
     <% else %>
       <%= track.file_field :audio, required: true, class: "input-file" %>
