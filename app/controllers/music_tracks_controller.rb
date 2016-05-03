@@ -3,6 +3,7 @@ class MusicTracksController < ApplicationController
 
   def new
     @music_track = MusicTrack.new
+    1.time { @music_track.tracks.build }
   end
 
   def create
@@ -11,6 +12,7 @@ class MusicTracksController < ApplicationController
       flash[:notice] = "La canción ha sido guardada con éxito"
       redirect_to music_tracks_path
     else
+      1.time { @music_track.tracks.build }
       flash[:alert] = "Ha ocurrido un problema y la canción no ha sido almacenada"
       render :action => 'new'
     end
@@ -43,6 +45,6 @@ class MusicTracksController < ApplicationController
 
   private
     def music_track_params
-      params.require(:music_track).permit(:name, :author, :image)
+      params.require(:music_track).permit(:name, :author, :image, tracks_attributes: [:id, :audio])
     end
 end
