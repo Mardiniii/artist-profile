@@ -230,42 +230,48 @@
             </div>
           </div>
           <div class="rock_event">
-            <div class="rock_event_tab">
-              <ul>
+            <% if @events.blank? %>
+              <h1>No hay eventos disponibles</h1>
+            <% else %>
+              <div class="rock_event_tab">
+                <ul>
+                  <% @events.each_with_index do |event, index| %>
+                    <li>
+                      <a href="#tab<%= index+1 %>" class="active">
+                        <p class="rock_event_date"><%= event.event_date.strftime("%d") %></p>
+                        <p class="rock_event_month"><%= event.event_date.strftime("%B") %></p>
+                      </a>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="rock_event_tab_content_main">
                 <% @events.each_with_index do |event, index| %>
-                  <li>
-                    <a href="#tab<%= index+1 %>" class="active">
-                      <p class="rock_event_date"><%= event.event_date.strftime("%d") %></p>
-                      <p class="rock_event_month"><%= event.event_date.strftime("%B") %></p>
-                    </a>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-            <div class="rock_event_tab_content_main">
-              <% @events.each_with_index do |event, index| %>
-                <div id="tab<%= index+1 %>" class="rock_event_tab_content">
-                  <div class="row">
-                    <div class="col-lg-8 col-md-12 col-sm-12"><img class="animated fadeInLeft" src="<%= event.image.url(:home_size) %>" alt="" /> </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                      <div class="rock_event_detail animated fadeInLeft">
-                        <h4><%= event.title %></h4>
-                        <p><%= event.description %></p>
-                        <h4>Compartir</h4>
-                        <div class="rock_social">
-                          <ul>
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                          </ul>
+                  <div id="tab<%= index+1 %>" class="rock_event_tab_content">
+                    <div class="row">
+                      <div class="col-lg-8 col-md-12 col-sm-12"><img class="animated fadeInLeft" src="<%= event.image.url(:home_size) %>" alt="" /> </div>
+                      <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="rock_event_detail animated fadeInLeft">
+                          <h4><%= event.title %></h4>
+                          <p><%= event.description %></p>
+                          <h4>Compartir</h4>
+                          <div class="rock_social">
+                            <ul>
+                              <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                              <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              <% end %>
-            </div>
+                <% end %>
+              </div>
+            <% end %>
             <div class="clearfix"></div>
           </div>
+
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12">
           <div class="rock_heading_div">
