@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# User seeds
 User.create([
 { email: "sezama03@hotmail.com", password: "holamama" },
 { email: "lilianarestrepot@gmail.com", password: "holamama" }
@@ -110,3 +104,10 @@ music_track = MusicTrack.new(
 track = music_track.tracks.new(audio: File.open("app/assets/audios/Vuelvo a tí.mp3"))
 music_track.save
 track.save
+
+# Background Images Seeds
+i = 1
+40.times do
+  BackgroundImage.create(image: File.new("app/assets/images/anacatalina/#{i.to_s}.jpg"))
+  i += 1
+end
