@@ -1,0 +1,30 @@
+<div class="container new_register">
+  <div class="row">
+    <h1 class="text-center">Canciones</h1>
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <th>Número</th>
+          <th>Imagen</th>
+          <th>Título</th>
+          <th>Artista</th>
+          <th>Opciones</th>
+        </thead>
+        <% @music_tracks.each_with_index do |music_track,index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= image_tag music_track.image.url(:thumb) %></td>
+            <td><%= music_track.name %></td>
+            <td><%= music_track.author %></td>
+            <td><%= link_to "Editar", edit_music_track_path(music_track) %> <!-- - <%#= link_to music_track_path(music_track.id), method: :delete, data: { confirm: '¿Are you sure?' } do %>Eliminar<%# end %> --></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center col-md-offset-3" id="btn-new-user">
+      <%= link_to "Regresar al Home", root_path, :class => 'btn btn-lg btn-danger' %>
+      <%#= link_to "Crear canción", new_music_track_path, class: "btn btn-lg btn-ar btn-success" %>
+    </div>
+</div>

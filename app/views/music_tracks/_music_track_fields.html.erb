@@ -1,0 +1,46 @@
+<div class="field form-group">
+  <%= music_track.label :name, "Título:", class: "lead lead-lg" %>
+  <%= music_track.text_field :name, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= music_track.label :author, "Autor:", class: "lead lead-lg" %>
+  <%= music_track.text_field :author, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= music_track.label :image, "Imagen:", class: "lead lead-lg block-label" %>
+  <% if @music_track.image.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <%= image_tag music_track.object.image.url(:thumb) %>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group reg-email">
+          <div>
+            <%= music_track.file_field :image, class: "input-file" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= music_track.file_field :image, required: true, class: "input-file" %>
+  <% end %>
+</div>
+
+<%= music_track.fields_for :tracks do |track| %>
+  <div class="field form-group">
+    <%= track.label :audio, "Archivo de audio:", class: "lead lead-lg block-label" %>
+    <% if track.object.audio.url != "" %>
+      <p><strong>Nombre:</strong> <%= track.object.audio_file_name %></p>
+      <%= track.file_field :audio, class: "input-file" %>
+    <% else %>
+      <%= track.file_field :audio, required: true, class: "input-file" %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="actions form-group text-center">
+  <%= link_to "Cancelar", music_tracks_path, :class => 'btn btn-lg btn-danger' %>
+  <%= music_track.submit "Guardar Información", :class => 'btn btn-lg btn-success' %>
+</div>

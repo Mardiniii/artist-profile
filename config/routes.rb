@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'events/new'
-
-  get 'events/edit'
-
-  get 'events/index'
-
   devise_for :users
 
   root 'pages#home'
@@ -13,6 +7,7 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact_us'
   resources :events
   resources :blog_entries
+  resources :music_tracks
   devise_scope :user do
     get "/admin" => "devise/sessions#new"
   end

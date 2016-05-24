@@ -54,14 +54,14 @@
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-12">
         <div class="rock_sidebar">
-          <h2>Rockon Club Track</h2>
+          <h2>Ultima Canción</h2>
           <div class="rock_audio_player">
-            <div class="rock_audio_player_title"><span class="track_artist">Enrique</span> Escape is the second</div>
-            <div class="rock_audio_player_track_image"> <img src="http://placehold.it/300x150" alt="track 1" />
-              <div class="rock_audio_player_track_image_overlay">Escape is the second</div>
+            <div class="rock_audio_player_title"><span class="track_artist"><%= @last_track.author %></span> <%= @last_track.name %></div>
+            <div class="rock_audio_player_track_image"> <img src="<%= @last_track.image.url(:medium) %>" alt="track 1" />
+              <div class="rock_audio_player_track_image_overlay"><%= @last_track.name %></div>
             </div>
             <div class="audio-player">
-              <audio class="rock_player" src="<%= audio_path('Bailando.mp3') %>" type="audio/mp3" controls></audio>
+              <audio class="rock_player" src="<%= @last_track_audio.audio.url %>" type="audio/mp3" controls></audio>
             </div>
           </div>
         </div>
