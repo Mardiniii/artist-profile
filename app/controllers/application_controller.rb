@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :footer_items
 
   def footer_items
-    @last_track = MusicTrack.last
+    @last_track = MusicTrack.order("RANDOM()").first
     @last_track_audio = @last_track.tracks.first
     @footer_events = Event.order(created_at: :desc).limit(5)
     @footer_blog_entries = BlogEntry.order(created_at: :desc).limit(5)

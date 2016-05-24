@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @events = Event.all.order("event_date").limit(4)
-    @music_tracks = MusicTrack.all
+    @music_tracks = MusicTrack.order("RANDOM()").limit(3)
   end
 
   def events
