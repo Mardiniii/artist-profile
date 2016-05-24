@@ -8,39 +8,9 @@
   <section class="main">
     <div id="ri-grid" class="ri-grid ri-grid-size-3">
       <ul>  <!--Minimum 33 images required in this Rotating grid-->
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300/00f" alt="" /></a></li>
-        <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
-    <li><a href="#"><img src="http://placehold.it/300x300" alt="" /></a></li>
+        <% @background_images.each do |background_image| %>
+          <li><a href="#"><img src="<%= background_image.image.url(:medium) %>" alt="" /></a></li>
+        <% end %>
       </ul>
     </div>
   </section>
