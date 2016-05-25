@@ -1,0 +1,22 @@
+<div class="row index">
+  <h1 class="text-center"><strong><%= @gallery.description.capitalize %></strong></h1>
+  <h3 class="text-center"><%= @gallery.title %> - <%= @gallery.created_at.strftime("%B %d, %Y") %></h3>
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table">
+      <thead>
+        <th>Número</th>
+        <th>Imágen</th>
+        <th>Eliminar</th>
+      </thead>
+      <tbody>
+        <% @images.each_with_index do |image, index| %>
+          <tr>
+            <td><%= @images.length - index %></td>
+            <td><%= image_tag image.photo.url(:mini_thumb) %></td>
+            <td><%= link_to image_path(image.id), method: :delete, data: { confirm: '¿Are you sure?' } do %>Eliminar<% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

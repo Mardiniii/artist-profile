@@ -7,4 +7,9 @@ function dragAndDropUploader() {
     paramName: "image[photo]", // Rails expects the file upload to be something like model[field_name]
     addRemoveLinks: true // don't show remove links on dropzone itself.
   });
+
+  dropzone.on("success", function(file) {
+    this.removeFile(file);
+    $.getScript("/images");
+  })
 }

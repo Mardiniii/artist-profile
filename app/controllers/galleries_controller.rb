@@ -9,7 +9,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.create(gallery_params)
     if @gallery.save
       flash[:notice] = "La galería ha sido guardada con éxito"
-      redirect_to galleries_path
+      redirect_to gallery_path
     else
       flash[:alert] = "Ha ocurrido un problema y la galería no ha sido almacenado"
       render :action => 'new'
@@ -23,6 +23,7 @@ class GalleriesController < ApplicationController
   def show
     @gallery = Gallery.find(params[:id])
     @image = Image.new
+    @images = @gallery.images.order("id desc")
     session[:gallery_id] = @gallery.id
   end
 
