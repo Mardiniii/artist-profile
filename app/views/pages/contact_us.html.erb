@@ -6,14 +6,14 @@
     <div class="container">
       <div class="rock_heading_div">
         <div class="rock_heading">
-          <h1>Contact Us</h1>
+          <h1>Contáctanos</h1>
           <p>X</p>
         </div>
       </div>
       <div class="rock_pager">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="">Contact Us</a></li>
+          <li><a href="">Contáctanos</a></li>
         </ul>
       </div>
     </div>
@@ -25,20 +25,19 @@
   <div class="rock_contact">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6">
-        <form role="form">
+        <form role="form" id="contact-form" action="https://formspree.io/your@email.com" method="POST">
           <div class="form-group">
-            <input type="text" class="form-control" id="uname" placeholder="Your First Name">
+            <input type="text" name="name" class="form-control" id="uname" placeholder="Nombre">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="uemail" placeholder="Your Email">
+            <input type="email" name="_replyto" class="form-control" id="uemail" placeholder="Correo Electrónico">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="web_site" placeholder="Your Web site">
+            <textarea rows="10" name="message" class="form-control" id="message" placeholder="Mensaje"></textarea>
           </div>
-          <div class="form-group">
-            <textarea rows="10" class="form-control" id="message" placeholder="Your Message"></textarea>
-          </div>
-          <input type="button" id="em_sub" class="btn btn-default btn-lg" value="Submit Your Message">
+          <input type="submit" id="em_sub" class="btn btn-default btn-lg" value="Enviar Mensaje">
+          <input type="hidden" name="_next" value="http://www.anacatalina.co" />
+          <input type="hidden" name="_subject" value="Solicitud de contacto de AnaCatalina.co!" />
           <p id="err"></p>
         </form>
       </div>
@@ -62,3 +61,18 @@
 </div>
 <div class="clearfix"></div>
 <%= render 'layouts/footer' %>
+
+<script>
+  $( "#work-form" ).on( "submit", function( event ) {
+     event.preventDefault();
+     var formData = $( this ).serialize();
+     $.ajax({
+       url: "//formspree.io/info@vuelteros.co",
+       method: "POST",
+       data: formData,
+       dataType: "json"
+     }).done(function(response) {
+       $( '#work-form' ).html("<h2 class='text-center'>¡Gracias por dejarme tu mensaje. Muy pronto nos pondremos en contacto!</h2>")
+     });
+   })
+</script>
