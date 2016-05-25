@@ -17,6 +17,7 @@
  *= require font-awesome
  *= require bootstrap-wysihtml5
  *= require mediaelement_rails
+ *= require dropzone/basic
  *= require mediaelement_rails/mejs-skins
  *= require datetimepicker
  */

@@ -28,5 +28,6 @@
 //= require datetimepicker
 //= require turbolinks
 //= require bootstrap-wysihtml5
+//= require dropzone
 //= require bootstrap-wysihtml5/locales/es-ES
 //= require_tree .
