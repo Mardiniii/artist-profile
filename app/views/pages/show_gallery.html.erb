@@ -1,0 +1,57 @@
+<%= render 'layouts/navbar', other_page: true %>
+<!--page title start-->
+<div class="rock_page_title_main">
+  <%= render 'rock_page_title_bg' %>
+  <div class="rock_page_title">
+    <div class="container">
+      <div class="rock_heading_div">
+        <div class="rock_heading">
+          <h1><%= @gallery.title %></h1>
+          <p>X</p>
+        </div>
+      </div>
+      <div class="rock_pager">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Galerías", pictures_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--page title end-->
+<div class="clearfix"></div>
+<div class="container">
+  <div class="rock_main_gallery">
+    <div class="main_gallery">
+      <div class="main_gallery_tab">
+        <ul>
+          <li><a class="description-selector" href="javascript:void(0);"><%= @gallery.description %></a></li>
+        </ul>
+      </div>
+      <div id="photo_tab" class="main_gallery_tab_content animated fadeInDown">
+        <div class="row">
+
+          <% @images.each do |image| %>
+            <div class="col-lg-4 col-md-4 col-sm-4 main_gallery_item">
+              <div class="rock_club_photo_slider_item">
+                <div class="rock_club_photo_item"> <img src="<%= image.photo.url(:photo) %>" alt="" />
+                  <div class="rock_club_photo_overlay">
+                    <div class="photo_link animated fadeInDown"> <a class="fancybox" data-fancybox-group="group1" href="<%= image.photo.url %>"><i class="fa fa-search-plus"></i></a></div>
+                    <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>
+
+<style>
+  .description-selector {
+    cursor: text;
+  }
+</style>

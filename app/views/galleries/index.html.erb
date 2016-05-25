@@ -1,0 +1,32 @@
+<div class="container new_register">
+  <div class="row">
+    <h1 class="text-center">Galerías</h1>
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <th>Número</th>
+          <th>Cover</th>
+          <th>Título</th>
+          <th>Imagenes</th>
+          <th>Fecha</th>
+          <th>Opciones</th>
+        </thead>
+        <% @galleries.each_with_index do |gallery,index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= image_tag gallery.avatar.url(:thumb) %></td>
+            <td><%= gallery.title %></td>
+            <td><%= gallery.images.count %></td>
+            <td><%= gallery.created_at.strftime("%B %d, %Y") %></td>
+            <td><%= link_to "Ver", gallery_path(gallery) %> - <%= link_to "Editar", edit_gallery_path(gallery) %> - <%= link_to gallery_path(gallery.id), method: :delete, data: { confirm: '¿Are you sure?' } do %>Eliminar<% end %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center col-md-offset-3" id="btn-new-user">
+      <%= link_to "Regresar al Home", root_path, :class => 'btn btn-lg btn-danger' %>
+      <%= link_to "Crear galería", new_gallery_path, class: "btn btn-lg btn-ar btn-success" %>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container new_register">
+  <div class="row">
+    <%= form_for(@image, html: { multipart: true, class: "dropzone"}) do |f|  %>
+      <div class="fallback">
+        <%= f.file_field :photo %>
+        <%= hidden_field_tag :gallery_id, :value => @gallery.id %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 text-center col-md-offset-3" id="btn-new-user">
+      <%= link_to "Regresar a galerías", galleries_path, :class => 'btn btn-lg btn-danger' %>
+    </div>
+  </div>
+
+  <%= render 'index_images' %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    dragAndDropUploader();
+  });
+</script>

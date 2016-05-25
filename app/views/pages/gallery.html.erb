@@ -1,0 +1,57 @@
+<%= render 'layouts/navbar', other_page: true %>
+<!--page title start-->
+<div class="rock_page_title_main">
+  <%= render 'rock_page_title_bg' %>
+  <div class="rock_page_title">
+    <div class="container">
+      <div class="rock_heading_div">
+        <div class="rock_heading">
+          <h1>Galería</h1>
+          <p>X</p>
+        </div>
+      </div>
+      <div class="rock_pager">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Galería", pictures_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--page title end-->
+<div class="clearfix"></div>
+<div class="rock_margin_30"></div>
+<div class="rock_footer rock_padding_20">
+  <div class="container">
+    <!--What we Offers start-->
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 rock_what_we_offer">
+        <div class="rock_heading_div">
+          <div class="rock_heading">
+            <h1>Albumnes</h1>
+            <p>X</p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
+      <% if @galleries.blank? %>
+        <div class="col-md-12">
+          <h1>No hay galerías disponibles</h1>
+        </div>
+      <% else %>
+        <% @galleries.each do |gallery| %>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="rock_about_offer"> <img src="<%= gallery.avatar.url(:cover) %>" alt="offer" /> <%= link_to show_gallery_path(:gallery_id => gallery.id) do %> <h3><%= gallery.title %></h3> <% end %>
+              <p><%= gallery.description %> </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<%= render 'layouts/footer' %>

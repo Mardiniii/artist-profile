@@ -22,11 +22,12 @@
 //= require bxslider
 //= require fancybox
 //= require smoothscroll
-//= require custom
 //= require select
 //= require single-0.1.0
 //= require datetimepicker
 //= require turbolinks
 //= require bootstrap-wysihtml5
+//= require dropzone
 //= require bootstrap-wysihtml5/locales/es-ES
+//= require custom
 //= require_tree .
