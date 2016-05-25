@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact_us'
   get 'gallery' => 'pages#gallery'
   resources :events
+  resources :galleries
   resources :blog_entries
   resources :music_tracks
   devise_scope :user do
