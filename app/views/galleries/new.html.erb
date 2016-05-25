@@ -1,2 +1,15 @@
-<h1>Galleries#new</h1>
-<p>Find me in app/views/galleries/new.html.erb</p>
+<div class="container new_register">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Crear nuevo album:</h1>
+      <%= form_for(@gallery) do |gallery| %>
+        <% if @gallery.errors.any? %>
+          <% @gallery.errors.each do |attribute, message| %>
+            <h3 class="validation-error"><%= message %></h3>
+          <% end %>
+        <% end %>
+        <%= render 'gallery_fields', gallery: gallery %>
+      <% end %>
+    </div>
+  </div>
+</div>
