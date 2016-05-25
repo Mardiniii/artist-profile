@@ -18,7 +18,7 @@
             <td><%= gallery.title %></td>
             <td><%= gallery.images.count %></td>
             <td><%= gallery.created_at.strftime("%B %d, %Y") %></td>
-            <td><%= link_to "Ver", gallery_path(gallery) %> - <%= link_to gallery_path(gallery.id), method: :delete, data: { confirm: '¿Are you sure?' } do %>Eliminar<% end %></td>
+            <td><%= link_to "Ver", gallery_path(gallery) %> - <%= link_to "Editar", edit_gallery_path(gallery) %> - <%= link_to gallery_path(gallery.id), method: :delete, data: { confirm: '¿Are you sure?' } do %>Eliminar<% end %></td>
           </tr>
         <% end %>
       </table>

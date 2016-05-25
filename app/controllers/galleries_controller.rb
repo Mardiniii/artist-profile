@@ -9,10 +9,25 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.create(gallery_params)
     if @gallery.save
       flash[:notice] = "La galería ha sido guardada con éxito"
-      redirect_to gallery_path
+      redirect_to @gallery
     else
       flash[:alert] = "Ha ocurrido un problema y la galería no ha sido almacenado"
       render :action => 'new'
+    end
+  end
+
+  def edit
+    @gallery = Gallery.find(params[:id])
+  end
+
+  def update
+    @gallery = Gallery.find(params[:id])
+    if @gallery.update(gallery_params)
+      flash[:notice] = "La galería ha sido editada con éxito"
+      redirect_to @gallery
+    else
+      flash[:alert] = 'Ha ocurrido un problema y la galería no ha sido editada'
+      render 'edit'
     end
   end
 

@@ -13,7 +13,7 @@
   <% if @gallery.avatar.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
     <div class="col-md-12">
       <div class="col-md-3">
-        <%= image_tag gallery.object.image.url(:thumb) %>
+        <%= image_tag gallery.object.avatar.url(:thumb) %>
       </div>
       <div class="col-md-9">
         <div class="form-group reg-email">

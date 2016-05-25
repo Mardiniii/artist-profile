@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'blog' => 'pages#blog'
   get 'contact' => 'pages#contact_us'
   get 'pictures' => 'pages#gallery'
+  get 'show_gallery' => 'pages#show_gallery'
   resources :events
   resources :galleries
   resources :blog_entries

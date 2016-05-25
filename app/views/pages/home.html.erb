@@ -262,60 +262,26 @@
     <div class="container">
       <div class="rock_heading_div">
         <div class="rock_heading">
-          <h1>Rockon Club Photos</h1>
+          <h1>Fotos</h1>
           <p>X</p>
         </div>
       </div>
       <div class="rock_club_photo">
         <div id="rock_club_photo_slider" class="owl-carousel owl-theme">
-          <div class="rock_club_photo_slider_item">
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image1.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image1.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
+          <% @home_pics.each_slice(2) do |image_1, image_2| %>
+            <div class="rock_club_photo_slider_item">
+              <div class="rock_club_photo_item"> <img src="<%= image_1.photo.url(:home_pic) %>" alt="" />
+                <div class="rock_club_photo_overlay">
+                  <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_1.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
+                  <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+              </div>
+              <div class="rock_club_photo_item"> <img src="<%= image_2.photo.url(:home_pic) %>" alt="" />
+                <div class="rock_club_photo_overlay">
+                  <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_2.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
+                  <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+              </div>
             </div>
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image2.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image2.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-          </div>
-          <div class="rock_club_photo_slider_item">
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image2.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image2.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image1.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image1.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-          </div>
-          <div class="rock_club_photo_slider_item">
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image1.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image1.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image2.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image2.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-          </div>
-          <div class="rock_club_photo_slider_item">
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image2.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image2.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-            <div class="rock_club_photo_item"> <img src="<%= asset_path('club/club_image1.jpg') %>" alt="" />
-              <div class="rock_club_photo_overlay">
-                <div class="photo_link animated fadeInDown"> <a href="gallery_3column.html"><i class="fa fa-link"></i></a> <a class="fancybox" data-fancybox-group="group1" href="<%= asset_path('club/club_image1.jpg') %>"><i class="fa fa-search-plus"></i></a> </div>
-                <a class="rock_club_photo_detail animated fadeInUp" href="">Rock on Dance</a> </div>
-            </div>
-          </div>
+          <% end %>
         </div>
         <div class="customNavigation"> <a class="rock_slider_button prev"><i class="fa fa-angle-left"></i></a> <a class="rock_slider_button next"><i class="fa fa-angle-right"></i></a> </div>
       </div>

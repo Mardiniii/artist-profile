@@ -36,53 +36,14 @@
         <div class="clearfix"></div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="rock_about_offer"> <img src="http://placehold.it/170x170" alt="offer" /> <a href="">
-          <h3>Drinks All Night</h3>
-          </a>
-          <p>Proin enim enim, cursus a aliquet ac, eleifend placerat odio. Ut vitae sem metus. Cum sociis natoue penatibus et magnis dis parturient montes, nascetu ridiculus mus. In eu vulputate erat, at consequat odio. </p>
+    <div class="row" style="margin-bottom: 20px;">
+      <% @galleries.each do |gallery| %>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="rock_about_offer"> <img src="<%= gallery.avatar.url(:cover) %>" alt="offer" /> <%= link_to show_gallery_path(:gallery_id => gallery.id) do %> <h3><%= gallery.title %></h3> <% end %>
+            <p><%= gallery.description %> </p>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="rock_about_offer"> <img src="http://placehold.it/170x170" alt="offer" /> <a href="">
-          <h3>Sexy Girls</h3>
-          </a>
-          <p>Proin enim enim, cursus a aliquet ac, eleifend placerat odio. Ut vitae sem metus. Cum sociis natoue penatibus et magnis dis parturient montes, nascetu ridiculus mus. In eu vulputate erat, at consequat odio. </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="rock_about_offer"> <img src="http://placehold.it/170x170" alt="offer" /> <a href="">
-          <h3>Bottle service</h3>
-          </a>
-          <p>Proin enim enim, cursus a aliquet ac, eleifend placerat odio. Ut vitae sem metus. Cum sociis natoue penatibus et magnis dis parturient montes, nascetu ridiculus mus. In eu vulputate erat, at consequat odio. </p>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="rock_about_offer"> <img src="http://placehold.it/170x170" alt="offer" /> <a href="">
-          <h3>Song requests</h3>
-          </a>
-          <p>Proin enim enim, cursus a aliquet ac, eleifend placerat odio. Ut vitae sem metus. Cum sociis natoue penatibus et magnis dis parturient montes, nascetu ridiculus mus. In eu vulputate erat, at consequat odio. </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="rock_about_offer"> <img src="http://placehold.it/170x170" alt="offer" /> <a href="">
-          <h3>TOP DJS</h3>
-          </a>
-          <p>Proin enim enim, cursus a aliquet ac, eleifend placerat odio. Ut vitae sem metus. Cum sociis natoue penatibus et magnis dis parturient montes, nascetu ridiculus mus. In eu vulputate erat, at consequat odio. </p>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="rock_about_offer"> <img src="http://placehold.it/170x170" alt="offer" /> <a href="">
-          <h3>Clock Room</h3>
-          </a>
-          <p>Proin enim enim, cursus a aliquet ac, eleifend placerat odio. Ut vitae sem metus. Cum sociis natoue penatibus et magnis dis parturient montes, nascetu ridiculus mus. In eu vulputate erat, at consequat odio. </p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

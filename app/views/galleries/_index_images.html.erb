@@ -1,6 +1,7 @@
 <div class="row index">
-  <h1 class="text-center"><strong><%= @gallery.description.capitalize %></strong></h1>
-  <h3 class="text-center"><%= @gallery.title %> - <%= @gallery.created_at.strftime("%B %d, %Y") %></h3>
+  <h1 class="text-center"><strong><%= @gallery.title %></strong></h1>
+  <h2 class="text-center"><%= @gallery.created_at.strftime("%B %d, %Y") %></h2>
+  <h3 class="text-center"><%= @gallery.description.capitalize %></h3>
   <div class="col-md-6 col-md-offset-3">
     <table class="table">
       <thead>

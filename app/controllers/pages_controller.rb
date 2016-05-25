@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     @events = Event.all.order("event_date").limit(4)
     @music_tracks = MusicTrack.where('id != ?', @last_track.id).order("RANDOM()").limit(3)
     @background_images = BackgroundImage.order("RANDOM()").limit(32)
+    @home_pics = Image.order("RANDOM()").limit(10)
   end
 
   def events
@@ -18,5 +19,11 @@ class PagesController < ApplicationController
   end
 
   def gallery
+    @galleries = Gallery.all
+  end
+
+  def show_gallery
+    @gallery = Gallery.find(params[:gallery_id])
+    @images = @gallery.images
   end
 end
