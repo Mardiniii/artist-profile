@@ -251,8 +251,12 @@
           </div>
           <div class="rock_event_time">
             <ul>
-              <% @events.each do |event| %>
-                <li><a href="javascript:void(0);" style="cursor: text;"><%= event.start_hour.strftime("%l %p") %> <span><%= event.location %></span></a></li>
+              <% if @events.blank? %>
+                <p>No hay eventos disponibles</p>
+              <% else %>
+                <% @events.each do |event| %>
+                  <li><a href="javascript:void(0);" style="cursor: text;"><%= event.start_hour.strftime("%l %p") %> <span><%= event.location %></span></a></li>
+                <% end %>
               <% end %>
             </ul>
           </div>
@@ -268,19 +272,23 @@
       </div>
       <div class="rock_club_photo">
         <div id="rock_club_photo_slider" class="owl-carousel owl-theme">
-          <% @home_pics.each_slice(2) do |image_1, image_2| %>
-            <div class="rock_club_photo_slider_item">
-              <div class="rock_club_photo_item"> <img src="<%= image_1.photo.url(:home_pic) %>" alt="" />
-                <div class="rock_club_photo_overlay">
-                  <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_1.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
-                  <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+          <% if @home_pics.blank? %>
+            <h1 class="text-center">No hay fotografías disponibles</h1>
+          <% else %>
+            <% @home_pics.each_slice(2) do |image_1, image_2| %>
+              <div class="rock_club_photo_slider_item">
+                <div class="rock_club_photo_item"> <img src="<%= image_1.photo.url(:home_pic) %>" alt="" />
+                  <div class="rock_club_photo_overlay">
+                    <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_1.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
+                    <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+                </div>
+                <div class="rock_club_photo_item"> <img src="<%= image_2.photo.url(:home_pic) %>" alt="" />
+                  <div class="rock_club_photo_overlay">
+                    <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_2.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
+                    <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+                </div>
               </div>
-              <div class="rock_club_photo_item"> <img src="<%= image_2.photo.url(:home_pic) %>" alt="" />
-                <div class="rock_club_photo_overlay">
-                  <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_2.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
-                  <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
-              </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
         <div class="customNavigation"> <a class="rock_slider_button prev"><i class="fa fa-angle-left"></i></a> <a class="rock_slider_button next"><i class="fa fa-angle-right"></i></a> </div>

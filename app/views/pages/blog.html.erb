@@ -80,15 +80,12 @@
           </div>
         </div>
         <div class="rock_sidebar">
-          <h2>Rockon Gallery</h2>
+          <h2>Galería</h2>
           <div class="rock_gallery">
             <ul>
-              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
-              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
-              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
-              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
-              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
-              <li><a href=""><img src="http://placehold.it/75x75" alt=""/></a></li>
+              <% @blog_pics.each do |image| %>
+                <li><a href=""><img src="<%= image.photo.url(:medium_thumb) %>" alt=""/></a></li>
+              <% end %>
             </ul>
           </div>
         </div>

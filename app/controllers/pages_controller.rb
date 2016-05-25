@@ -16,6 +16,7 @@ class PagesController < ApplicationController
 
   def blog
     @blog_entries = BlogEntry.order("created_at DESC")
+    @blog_pics = Image.order("RANDOM()").limit(6)
   end
 
   def gallery
