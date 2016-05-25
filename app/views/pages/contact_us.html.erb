@@ -24,8 +24,8 @@
 <div class="container">
   <div class="rock_contact">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <form role="form" id="contact-form" action="https://formspree.io/tuenmi@anacatalina.co" method="POST">
+      <div class="col-lg-6 col-md-6 col-sm-6 contact-form">
+        <form role="form" id="contact-form" action="">
           <div class="form-group">
             <input type="text" name="name" class="form-control" id="uname" placeholder="Nombre">
           </div>
@@ -72,7 +72,7 @@
        data: formData,
        dataType: "json"
      }).done(function(response) {
-       $( '#work-form' ).html("<h2 class='text-center'>¡Gracias por dejarme tu mensaje. Muy pronto nos pondremos en contacto!</h2>")
+       $( '.contact-form' ).html("<h2 class='text-center'>¡Gracias por dejarme tu mensaje. Muy pronto nos pondremos en contacto!</h2>")
      });
    })
 </script>

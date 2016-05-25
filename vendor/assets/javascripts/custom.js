@@ -86,22 +86,6 @@ jQuery(window).load(function () {
              }
         });
 
-
-
-
-
-
-
-
-
-
-	/* mail function */
-
-
-
-
-
-
     //accordion
 	jQuery(function ($) {
 		var $active = $('#accordion .panel-collapse.in').prev().addClass('active');
