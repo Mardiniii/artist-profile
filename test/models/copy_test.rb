@@ -24,6 +24,7 @@
 #  contact_text         :text
 #  contact_phone_1      :string
 #  contact_phone_2      :string
+#  who_i_am             :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #

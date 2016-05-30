@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160530182712) do
     t.text     "contact_text"
     t.string   "contact_phone_1"
     t.string   "contact_phone_2"
+    t.string   "who_i_am"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

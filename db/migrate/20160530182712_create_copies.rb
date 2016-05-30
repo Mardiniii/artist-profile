@@ -22,6 +22,7 @@ class CreateCopies < ActiveRecord::Migration
       t.text :contact_text
       t.string :contact_phone_1
       t.string :contact_phone_2
+      t.string :who_i_am
 
       t.timestamps null: false
     end
