@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @music_tracks = MusicTrack.where('id != ?', @last_track.id).order("RANDOM()").limit(3)
     @background_images = BackgroundImage.order("RANDOM()").limit(40)
     @home_pics = Image.order("RANDOM()").limit(10)
+    @slides = Slide.all
   end
 
   def events
