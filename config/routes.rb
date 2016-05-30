@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   root 'pages#home'
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   resources :music_tracks
   resources :images
   resources :copies
+  resources :slides
   devise_scope :user do
     get "/admin" => "devise/sessions#new"
   end
