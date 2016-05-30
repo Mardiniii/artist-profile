@@ -2,8 +2,11 @@
   <section class="main">
     <div id="rock_page_title_bg" class="ri-grid ri-grid-size-3">
       <ul>
-        <% @header_images.each do |background_image| %>
-          <li><a href="#"><img src="<%= background_image.image.url(:medium) %>" alt="" /></a></li>
+        <!-- Background Images from local files -->
+        <% i = 1 %>
+        <% 40.times do %>
+          <li><a href="#"><img src="<%= asset_path("anacatalina/#{i.to_s}.jpg") %>" alt="" /></a></li>
+          <% i += 1 %>
         <% end %>
       </ul>
     </div>
