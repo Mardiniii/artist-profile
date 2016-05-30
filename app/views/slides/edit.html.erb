@@ -1,2 +1,15 @@
-<h1>Slides#edit</h1>
-<p>Find me in app/views/slides/edit.html.erb</p>
+<div class="container new_register">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Editar slide:</h1>
+      <%= form_for(@slide) do |slide| %>
+        <% if @slide.errors.any? %>
+          <% @slide.errors.each do |attribute, message| %>
+            <h3 class="validation-error"><%= message %></h3>
+          <% end %>
+        <% end %>
+        <%= render 'slide_fields', slide: slide %>
+      <% end %>
+    </div>
+  </div>
+</div>

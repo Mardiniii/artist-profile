@@ -1,0 +1,44 @@
+<div class="field form-group">
+  <%= slide.label :first_text, "Primer Texto:", class: "lead lead-lg" %>
+  <%= slide.text_area :first_text, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= slide.label :second_text, "Segundo Texto:", class: "lead lead-lg" %>
+  <%= slide.text_field :second_text, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= slide.label :button_content, "Contenido del Botón:", class: "lead lead-lg" %>
+  <%= slide.text_field :button_content, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= slide.label :button_link, "Link del Botón:", class: "lead lead-lg" %>
+  <%= slide.text_field :button_link, required: true, class: "form-control", id: "new_user_email" %>
+</div>
+
+<div class="field form-group">
+  <%= slide.label :image, "Imagen:", class: "lead lead-lg block-label" %>
+  <% if @slide.image.url != "http://i592.photobucket.com/albums/tt5/Mardini03/imagen-no-disponible.png" %>
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <%= image_tag slide.object.image.url(:thumb) %>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group reg-email">
+          <div>
+            <%= slide.file_field :image, class: "input-file" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= slide.file_field :image, required: true, class: "input-file" %>
+  <% end %>
+</div>
+
+<div class="actions form-group text-center">
+  <%= link_to "Cancelar", slides_path, :class => 'btn btn-lg btn-danger' %>
+  <%= slide.submit "Guardar Información", :class => 'btn btn-lg btn-success' %>
+</div>
