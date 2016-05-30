@@ -25,10 +25,10 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 rock_about" style="margin-bottom: 70px;">
       <div class="rock_about_welcome">
-        <h1>Welcome in <span>Rock<span class="label label-default">on</span></span> Club</h1>
+        <h1 class="rock_welcome"><strong><%= @copies.home_title_1 %></strong></h1>
       </div>
       <img src="http://placehold.it/1170x360" alt="" />
-      <p><%= @copies.who_i_am.html_safe %></p>
+      <%= @copies.who_i_am.html_safe %>
     </div>
   </div>
 </div>
