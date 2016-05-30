@@ -11,5 +11,6 @@ class ApplicationController < ActionController::Base
     @footer_blog_entries = BlogEntry.order(created_at: :desc).limit(5)
     @header_images = BackgroundImage.order("RANDOM()").limit(40)
     @footer_images = BackgroundImage.order("RANDOM()").limit(32)
+    @copies = Copy.find(1)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525044714) do
+ActiveRecord::Schema.define(version: 20160530182712) do
 
   create_table "background_images", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -32,6 +32,32 @@ ActiveRecord::Schema.define(version: 20160525044714) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "copies", force: :cascade do |t|
+    t.text     "home_title_1"
+    t.text     "home_text"
+    t.text     "home_service_title_1"
+    t.text     "home_service_text_1"
+    t.text     "home_service_link_1"
+    t.text     "home_service_title_2"
+    t.text     "home_service_text_2"
+    t.text     "home_service_link_2"
+    t.text     "home_service_title_3"
+    t.text     "home_service_text_3"
+    t.text     "home_service_link_3"
+    t.text     "footer_title_1"
+    t.text     "footer_text_1"
+    t.text     "footer_title_2"
+    t.text     "footer_text_2"
+    t.text     "footer_title_3"
+    t.text     "footer_text_3"
+    t.text     "contact_title"
+    t.text     "contact_text"
+    t.string   "contact_phone_1"
+    t.string   "contact_phone_2"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "events", force: :cascade do |t|
