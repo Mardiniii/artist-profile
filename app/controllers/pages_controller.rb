@@ -27,4 +27,7 @@ class PagesController < ApplicationController
     @gallery = Gallery.find(params[:gallery_id])
     @images = @gallery.images
   end
+
+  def about_me
+  end
 end
