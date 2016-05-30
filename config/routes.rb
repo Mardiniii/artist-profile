@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'copies/edit'
 
   devise_for :users
 
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   resources :blog_entries
   resources :music_tracks
   resources :images
+  resources :copies
   devise_scope :user do
     get "/admin" => "devise/sessions#new"
   end

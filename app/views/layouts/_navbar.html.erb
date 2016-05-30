@@ -21,6 +21,7 @@
               <% if user_signed_in? %>
                 <li class="active"><a>Admin</a>
                   <ul class="sub-menu">
+                    <li><%= link_to "Textos", edit_copy_path(@copies) %></li>
                     <li><%= link_to "Galerías", galleries_path %></li>
                     <li><%= link_to "Música", music_tracks_path %></li>
                     <li><%= link_to "Eventos", events_path %></li>

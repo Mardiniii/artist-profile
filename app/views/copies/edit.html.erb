@@ -1,2 +1,136 @@
-<h1>Copies#edit</h1>
-<p>Find me in app/views/copies/edit.html.erb</p>
+<div class="container new_register">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center"><strong>Editar contenido de la página:</strong></h1>
+      <%= form_for(@copy) do |copy| %>
+        <div class="row">
+          <% if @copy.errors.any? %>
+            <% @copy.errors.each do |attribute, message| %>
+              <h3 class="validation-error"><%= message %></h3>
+            <% end %>
+          <% end %>
+          <div class="col-md-6">
+            <h2 class="form-copie-title"><strong>Contenido Inicial</strong></h2>
+            <div class="field form-group">
+              <%= copy.label :home_title_1, "Título Home:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_title_1, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_text, "Texto Home:", class: "lead lead-lg" %>
+              <%= copy.text_area :home_text, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <h2 class="form-copie-title"><strong>Contenido del Footer</strong></h2>
+            <div class="field form-group">
+              <%= copy.label :footer_title_1, "Título Footer 1:", class: "lead lead-lg" %>
+              <%= copy.text_field :footer_title_1, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :footer_text_1, "Texto Footer 1:", class: "lead lead-lg" %>
+              <%= copy.text_field :footer_text_1, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :footer_title_2, "Título Footer 2:", class: "lead lead-lg" %>
+              <%= copy.text_field :footer_title_2, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :footer_text_2, "Texto Footer 2:", class: "lead lead-lg" %>
+              <%= copy.text_field :footer_text_2, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :footer_title_3, "Título Footer 3:", class: "lead lead-lg" %>
+              <%= copy.text_field :footer_title_3, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :footer_text_3, "Texto Footer 3:", class: "lead lead-lg" %>
+              <%= copy.text_field :footer_text_3, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <h2 class="form-copie-title"><strong>Contacto</strong></h2>
+            <div class="field form-group">
+              <%= copy.label :contact_title, "Título Contacto:", class: "lead lead-lg" %>
+              <%= copy.text_field :contact_title, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :contact_text, "Texto Contacto:", class: "lead lead-lg" %>
+              <%= copy.text_field :contact_text, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :contact_phone_1, "Teléfono 1:", class: "lead lead-lg" %>
+              <%= copy.text_field :contact_phone_1, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :contact_phone_2, "Teléfono 2:", class: "lead lead-lg" %>
+              <%= copy.text_field :contact_phone_2, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="form-copie-title"><strong>Servicios</strong></h2>
+            <div class="field form-group">
+              <%= copy.label :home_service_title_1, "Título Servicio 1:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_service_title_1, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_text_1, "Texto Servicio 1:", class: "lead lead-lg" %>
+              <%= copy.text_area :home_service_text_1, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_link_1, "Link Servicio 1:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_service_link_1, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_title_2, "Título Servicio 2:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_service_title_2, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_text_2, "Texto Servicio 2:", class: "lead lead-lg" %>
+              <%= copy.text_area :home_service_text_2, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_link_2, "Link Servicio 2:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_service_link_2, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_title_3, "Título Servicio 3:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_service_title_3, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_text_3, "Texto Servicio 3:", class: "lead lead-lg" %>
+              <%= copy.text_area :home_service_text_3, required: true, rows: 5, class: "form-control", id: "new_user_email" %>
+            </div>
+
+            <div class="field form-group">
+              <%= copy.label :home_service_link_3, "Link Servicio 3:", class: "lead lead-lg" %>
+              <%= copy.text_field :home_service_link_3, required: true, class: "form-control", id: "new_user_email" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="actions form-group text-center">
+              <%= link_to "Cancelar", root_path, :class => 'btn btn-lg btn-danger' %>
+              <%= copy.submit "Guardar Contenido", class: "btn btn-ar btn-lg btn-success" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
