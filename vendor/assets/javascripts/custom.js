@@ -165,7 +165,7 @@ jQuery(window).load(function () {
 	// slider autoplay
 	$(function(){
       $('.carousel').carousel({
-      interval: 4000,
+      interval: 12000,
 	  pause: "false"
 		});
 	});
