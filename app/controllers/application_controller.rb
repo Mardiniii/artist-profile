@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     @last_track_audio = @last_track.tracks.first
     @footer_events = Event.order(created_at: :desc).limit(5)
     @footer_blog_entries = BlogEntry.order(created_at: :desc).limit(5)
+    @header_images = BackgroundImage.order("RANDOM()").limit(40)
+    @footer_images = BackgroundImage.order("RANDOM()").limit(40)
     @copies = Copy.find(1)
   end
 end

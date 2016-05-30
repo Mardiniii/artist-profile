@@ -47,12 +47,9 @@
     <section class="main">
       <div id="ri-grid2" class="ri-grid ri-grid-size-3">
         <ul>
-
-          <!-- Background Images from local files -->
-          <% i = 1 %>
-          <% 32.times do %>
-            <li><a href="#"><img src="<%= asset_path("anacatalina/#{i.to_s}.jpg") %>" alt="" /></a></li>
-            <% i += 1 %>
+          <!-- Background Images from AWS -->
+          <% @footer_images.each do |background_image| %>
+            <li><a href="#"><img src="<%= background_image.image.url(:medium) %>" alt="" /></a></li>
           <% end %>
         </ul>
       </div>

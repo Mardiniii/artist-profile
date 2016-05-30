@@ -13,7 +13,7 @@
       <div class="rock_pager">
         <ul>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Quien Soy?", coming_events_path %></li>
+          <li><%= link_to "Quien Soy?", about_me_path %></li>
         </ul>
       </div>
     </div>
@@ -21,8 +21,10 @@
 </div>
 <!--page title end-->
 <div class="clearfix"></div>
+<div class="rock_margin_30"></div>
 <div class="container">
   <div class="row">
+
     <div class="col-lg-12 col-md-12 col-sm-12 rock_about" style="margin-bottom: 70px;">
       <div class="rock_about_welcome">
         <h1 class="rock_welcome"><strong><%= @copies.home_title_1 %></strong></h1>
@@ -30,6 +32,7 @@
       <img src="http://placehold.it/1170x360" alt="" />
       <%= @copies.who_i_am.html_safe %>
     </div>
+
   </div>
 </div>
 <div class="clearfix"></div>
