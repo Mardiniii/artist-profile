@@ -1,9 +1,10 @@
 # User seeds
 User.create([
-{ email: "sezama03@hotmail.com", password: "holamama" },
-{ email: "lilianarestrepot@gmail.com", password: "holamama" }
+  { email: "sezama03@hotmail.com", password: "holamama" },
+  { email: "lilianarestrepot@gmail.com", password: "anacatalina" },
+  { email: "german7252@gmail.com", password: "anacatalina" },
+  { email: "contacto@anacatalina.co", password: "anacatalina" }
 ])
-
 
 # Create Music Tracks From First CD
 extn = File.extname "app/assets/audios/Cubierta de tu amor.mp3"
