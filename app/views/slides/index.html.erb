@@ -30,6 +30,7 @@
         <thead>
           <th>Número</th>
           <th>Imagen</th>
+          <th>Ubicación</th>
           <th>Tamaño</th>
           <th>Opciones</th>
         </thead>
@@ -37,6 +38,7 @@
           <tr>
             <td>1</td>
             <td><%= image_tag @about_me.image.url(:thumb) %></td>
+            <td><%= @about_me.first_text %></td>
             <td><%= @about_me.second_text %></td>
             <td><%= link_to "Editar", edit_slide_path(@about_me) %></td>
           </tr>
