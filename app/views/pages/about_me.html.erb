@@ -29,7 +29,7 @@
       <div class="rock_about_welcome">
         <h1 class="rock_welcome"><strong><%= @copies.home_title_1 %></strong></h1>
       </div>
-      <img src="http://placehold.it/1170x360" alt="" />
+      <img src="<%= Slide.find(4).image.url(:extra_large) %>" alt="" />
       <%= @copies.who_i_am.html_safe %>
     </div>
 

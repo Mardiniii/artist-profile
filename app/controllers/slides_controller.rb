@@ -6,7 +6,8 @@ class SlidesController < ApplicationController
   end
 
   def index
-    @slides = Slide.all
+    @slides = Slide.where(id: [1,2,3])
+    @about_me = Slide.find(4)
   end
 
   def update

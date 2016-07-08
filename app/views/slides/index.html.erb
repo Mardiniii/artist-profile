@@ -9,14 +9,38 @@
           <th>Primer Texto</th>
           <th>Opciones</th>
         </thead>
-        <% @slides.each_with_index do |slide,index| %>
+        <tbody>
+          <% @slides.each_with_index do |slide,index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= image_tag slide.image.url(:thumb) %></td>
+              <td><%= slide.first_text %></td>
+              <td><%= link_to "Editar", edit_slide_path(slide) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <h1 class="text-center">Imágenes</h1>
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <th>Número</th>
+          <th>Imagen</th>
+          <th>Tamaño</th>
+          <th>Opciones</th>
+        </thead>
+        <tbody>
           <tr>
-            <td><%= index + 1 %></td>
-            <td><%= image_tag slide.image.url(:thumb) %></td>
-            <td><%= slide.first_text %></td>
-            <td><%= link_to "Editar", edit_slide_path(slide) %></td>
+            <td>1</td>
+            <td><%= image_tag @about_me.image.url(:thumb) %></td>
+            <td><%= @about_me.second_text %></td>
+            <td><%= link_to "Editar", edit_slide_path(@about_me) %></td>
           </tr>
-        <% end %>
+        </tbody>
       </table>
     </div>
   </div>
