@@ -189,16 +189,20 @@
           <% else %>
             <% @home_pics.each_slice(2) do |image_1, image_2| %>
               <div class="rock_club_photo_slider_item">
-                <div class="rock_club_photo_item"> <img src="<%= image_1.photo.url(:home_pic) %>" alt="" />
-                  <div class="rock_club_photo_overlay">
-                    <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_1.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
-                    <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
-                </div>
-                <div class="rock_club_photo_item"> <img src="<%= image_2.photo.url(:home_pic) %>" alt="" />
-                  <div class="rock_club_photo_overlay">
-                    <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_2.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
-                    <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
-                </div>
+                <% if image_1 && image_1.photo %>
+                  <div class="rock_club_photo_item"> <img src="<%= image_1.photo.url(:home_pic) %>" alt="" />
+                    <div class="rock_club_photo_overlay">
+                      <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_1.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
+                      <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+                  </div>
+                <% end %>
+                <% if image_2 && image_2.photo %>
+                  <div class="rock_club_photo_item"> <img src="<%= image_2.photo.url(:home_pic) %>" alt="" />
+                    <div class="rock_club_photo_overlay">
+                      <div class="photo_link animated fadeInDown"><a class="fancybox" data-fancybox-group="group1" href="<%= image_2.photo.url %>"><i class="fa fa-search-plus"></i></a> </div>
+                      <a class="rock_club_photo_detail animated fadeInUp" href="">Ana Catalina</a> </div>
+                  </div>
+                <% end %>
               </div>
             <% end %>
           <% end %>
