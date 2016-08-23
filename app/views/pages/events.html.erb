@@ -24,32 +24,30 @@
 <div class="rock_margin_30"></div>
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <% @events.each do |event| %>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="rock_main_event">
-            <div class="rock_main_event_image"> <img src="<%= event.image.url(:medium) %>" alt="" />
-            </div>
-            <div class="rock_main_event_detail">
-              <div class="rock_event_date">
-                <div class="event_date">
-                  <h1><%= event.event_date.strftime("%d") %></h1>
-                  <p><%= event.event_date.strftime("%B") %></p>
-                </div>
+    <% @events.each do |event| %>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="rock_main_event">
+          <div class="rock_main_event_image"> <img src="<%= event.image.url(:medium) %>" alt="" />
+          </div>
+          <div class="rock_main_event_detail">
+            <div class="rock_event_date">
+              <div class="event_date">
+                <h1><%= event.event_date.strftime("%d") %></h1>
+                <p><%= event.event_date.strftime("%B") %></p>
               </div>
-              <h2><%= event.title %></h2>
-              <div class="blog_entry_meta">
-                <ul>
-                  <li><a href="javascript:void(0);" style="cursor: text;"><i class="fa fa-clock-o"></i> <%= event.start_hour.strftime("%l %p") %> - <%= event.end_hour.strftime("%l %p") %></a></li>
-                  <li><a href="javascript:void(0);" style="cursor: text;"><i class="fa fa-map-marker"></i><%= event.location.humanize %></a></li>
-                </ul>
-              </div>
-              <p><%= event.description %></p>
             </div>
+            <h2><%= event.title %></h2>
+            <div class="blog_entry_meta">
+              <ul>
+                <li><a href="javascript:void(0);" style="cursor: text;"><i class="fa fa-clock-o"></i> <%= event.start_hour.strftime("%l %p") %> - <%= event.end_hour.strftime("%l %p") %></a></li>
+                <li><a href="javascript:void(0);" style="cursor: text;"><i class="fa fa-map-marker"></i><%= event.location.humanize %></a></li>
+              </ul>
+            </div>
+            <p><%= event.description %></p>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="clearfix"></div>
