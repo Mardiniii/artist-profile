@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @events = Event.all.order("event_date").limit(4)
+    @events = Event.all.order("event_date desc").limit(4)
     @music_tracks = MusicTrack.where('id != ?', @last_track.id).order("RANDOM()").limit(3)
     @background_images = BackgroundImage.order("RANDOM()").limit(40)
     @home_pics = Image.order("RANDOM()").limit(10)
@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = Event.all.order(created_at: :desc)
+    @events = Event.all.order("event_date desc")
   end
 
   def contact_us

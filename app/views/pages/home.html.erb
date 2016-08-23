@@ -58,7 +58,7 @@
   </div>
   <div class="rock_heading_div">
     <div class="rock_heading">
-      <h1>Services</h1>
+      <h1>Servicios</h1>
       <p>X</p>
     </div>
   </div>
@@ -80,7 +80,7 @@
             <div class="rock_service_icon"> <img src="<%= asset_path('icono-1.png') %>" width="60" height="60" alt=""> </div>
             <h2><%= @copies.home_service_title_2 %></h2>
             <p><%= @copies.home_service_text_2 %></p>
-            <div class="rock_service_read_more"> <a href="<%= @copies.home_service_link_1 %>"> Leer Más <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            <div class="rock_service_read_more"> <a href="<%= @copies.home_service_link_2 %>"> Leer Más <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    width="30px" height="20px" viewBox="0 0 104.08 94.747" enable-background="new 0 0 104.08 94.747" xml:space="preserve">
               <path d="M104.08,47.374L56.707,94.747l-1.414-1.414l45.959-45.959L55.293,1.414L56.707,0L104.08,47.374z M100.112,46.374H0v2
   h100.112V46.374z"/>
@@ -103,7 +103,7 @@
     <div class="rock_margin_30"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 col-md-8 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="rock_heading_div">
             <div class="rock_heading">
               <h1>Eventos del mes</h1>
@@ -135,6 +135,7 @@
                         <div class="rock_event_detail animated fadeInLeft">
                           <h4><%= event.title %></h4>
                           <p><%= event.description %></p>
+                          <p><a href="javascript:void(0);" style="cursor: text;"><%= event.start_hour.strftime("%l %p") %> - <span><%= event.location %></span></a></p>
                           <h4>Compartir</h4>
                           <div class="rock_social">
                             <ul>
@@ -150,27 +151,6 @@
               </div>
             <% end %>
             <div class="clearfix"></div>
-          </div>
-
-
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-12">
-          <div class="rock_heading_div">
-            <div class="rock_heading">
-              <h1>Horario Eventos</h1>
-              <p>X</p>
-            </div>
-          </div>
-          <div class="rock_event_time">
-            <ul>
-              <% if @events.blank? %>
-                <p>No hay eventos disponibles</p>
-              <% else %>
-                <% @events.each do |event| %>
-                  <li><a href="javascript:void(0);" style="cursor: text;"><%= event.start_hour.strftime("%l %p") %> <span><%= event.location %></span></a></li>
-                <% end %>
-              <% end %>
-            </ul>
           </div>
         </div>
       </div>
